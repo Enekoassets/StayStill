@@ -46,65 +46,6 @@ The following table presents the data in a more specific manner:
 | **General Idle** | **XXXXX** | **XX:XX:XX** | **XX** |
 | **Idle with a phone** | **XXXXX** | **XX:XX:XX** | **XX** |
 
-The following videos present extracts of some example motion clips:
-
-<table>
-  <tr>
-    <td align="center">
-      <video width="320" height="240" controls>
-        <source src="images/00.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <br>
-      <sub>Example 1: general idle</sub>
-    </td>
-    <td align="center">
-      <video width="320" height="240" controls>
-        <source src="images/01.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <br>
-      <sub>Example 2: idle with a phone</sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <video width="320" height="240" controls>
-        <source src="images/02.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <br>
-      <sub>Example 3: look back (left)</sub>
-    </td>
-    <td align="center">
-      <video width="320" height="240" controls>
-        <source src="images/03.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <br>
-      <sub>Example 4: Scratch eyes</sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <video width="320" height="240" controls>
-        <source src="images/04.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <br>
-      <sub>Example 5: check phone</sub>
-    </td>
-    <td align="center">
-      <video width="320" height="240" controls>
-        <source src="images/05.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <br>
-      <sub>Example 6: look around</sub>
-    </td>
-  </tr>
-</table>
-
 ## License
 The dataset provided in this repository is released under the **MIT License**.  
 You are free to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the dataset, under the conditions outlined in the MIT License.
