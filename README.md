@@ -1,5 +1,10 @@
 # StayStill: a 3d idle animation dataset
 This repository will contain the animation data for the StayStill dataset. The repository is still work in progress, but you can give it a star if you want to follow the development and publishing of the data.
+## Idle Motion Generation using the data (Teaser/WIP)
+The data has already been used to train a motion generator. The video below shows some preliminary results. (Left: SLERP, Middle: Ground Truth, Right: Generator)
+
+https://github.com/user-attachments/assets/6435fe4f-e60c-4601-860e-bcb0e6e7731b
+
 ## Citing
 This section will be updated when the data is published.
 ## Data
