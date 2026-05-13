@@ -117,7 +117,7 @@ folder_of_your_choice
 
 - Download the dataset from [Zenodo](https://zenodo.org/records/18741736?preview=1&token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjQwYWNhNjgzLWE4ZDAtNDIzMy05ZjY3LWY3NjE0OTA4NWQ0NSIsImRhdGEiOnt9LCJyYW5kb20iOiIxN2VmODE2YmFkZTczNTk2MzQ4YTJhOTYyMTI2N2Y5NyJ9.DjZnwlSgwhod9XOa3by4kmWHKRkt6r_2L25qB-vfvtOqCk2UtmTkJckArcDc3xYLbEm6GlnXiswI1uMs2gKs3g), and unzip the contents (don't use data cleaning script, use the raw data from Zenodo, or the indexing will not work properly). Then, copy the ``lafan`` folder from the dataset in the ``datasets`` folder in the motion_inbetweening ``(MIB)`` repository.
 
-- Download the pretrained models from the [releases](https://github.com/Enekoassets/staystillreleasetest/releases/tag/Model) section of this repository.
+- Download the pretrained models from the [releases](https://github.com/Enekoassets/StayStill/releases/tag/Model) section of this repository.
   
 - Unzip the ``models.zip`` file and paste the ``idle_ctx_model`` and ``idle_det_model`` folders into the ``experiments`` folder in the ``MIB`` repository.
 
