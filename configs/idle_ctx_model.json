@@ -1,0 +1,125 @@
+{
+    "name": "idle_ctx_model",
+    "workspace": "..\\experiments\\{name}",
+    "datasets": {
+        "train": {
+            "bvh_folder": "..\\datasets\\lafan\\idle",
+            "actors": [
+                "31","26","04","36","49","47","29","48","05","46","30","41","20","16","39","11","44","32","34","18","37","25","07","14","42","01","00","13","35","27","17","33","24","12","03"
+            ],
+            "window": 41,
+            "offset": 1,
+            "start_frame": 0
+        },
+        "train_stats": {
+            "bvh_folder": "..\\datasets\\lafan\\idle",
+            "actors": [
+                "31","26","04","36","49","47","29","48","05","46","30","41","20","16","39","11","44","32","34","18","37","25","07","14","42","01","00","13","35","27","17","33","24","12","03"
+            ],
+            "window": 50,
+            "offset": 20,
+            "start_frame": 0
+        },
+        "bench_stats": {
+            "bvh_folder": "..\\datasets\\lafan\\idle",
+            "actors": [
+                "31","26","04","36","49","47","29","48","05","46","30","41","20","16","39","11","44","32","34","18","37","25","07","14","42","01","00","13","35","27","17","33","24","12","03"
+            ],
+            "window": 50,
+            "offset": 20,
+            "start_frame": 0
+        },
+        "val": {
+            "bvh_folder": "..\\datasets\\lafan\\idle",
+            "actors": [
+                "19","08","21","38","40"
+            ],
+            "window": 65,
+            "offset": 80,
+            "start_frame": 35
+        },
+        "benchmark": {
+            "bvh_folder": "..\\datasets\\lafan\\idle",
+            "actors": [
+                "02","06","09","10","15","22","23","28","43","45"
+            ],
+            "window": 65,
+            "offset": 40,
+            "start_frame": 0
+        }
+    },
+    "train": {
+        "checkpoint": "checkpoint_{name}.pth",
+        "checkpoint_interval": 1000,
+        "total_epoch": 200,
+        "batch_size": 32,
+        "lr": 0.0625,
+        "lr_warmup_iterations": 8000,
+        "context_len": 10,
+        "min_trans": 5,
+        "max_trans": 30,
+        "midway_targets_amount": 0.1,
+        "midway_targets_p": 0.5
+    },
+    "model": {
+        "d_mask": 1,
+        "constrained_slices": [
+            [
+                null,
+                null
+            ]
+        ],
+        "n_layer": 6,
+        "n_head": 8,
+        "d_model": 512,
+        "d_head": 64,
+        "d_pff_inner": 512,
+        "d_encoder_in": 136,
+        "d_encoder_h": 512,
+        "d_decoder_h": 512,
+        "d_out": 135,
+        "dropout": 0.0,
+        "pre_lnorm": true,
+        "atten_bias": false,
+        "max_seq_len": 65
+    },
+    "indices": {
+        "r_start_idx": 0,
+        "r_end_idx": 132,
+        "p_start_idx": 132,
+        "p_end_idx": 135,
+        "c_start_idx": 135,
+        "c_end_idx": 139
+    },
+    "weights": {
+        "rw": 1.0,
+        "cw": 0.1,
+        "pw": 0.01,
+        "sw": 0.005
+    },
+    "visdom": {
+        "env": "Motion Inbetween - {name}",
+        "interval": 100,
+        "interval_eval": 1000,
+        "eval_trans": [
+            45,
+            30
+        ]
+    },
+    "finetune": {
+        "enabled": false,
+        "finetune": {
+            "checkpoint": "checkpoint_{finetune_from_name}.pth",
+            "checkpoint_interval": 1000,
+            "total_epoch": 200,
+            "batch_size": 32,
+            "lr": 0.0625,
+            "lr_warmup_iterations": 8000,
+            "context_len": 10,
+            "min_trans": 5,
+            "max_trans": 30,
+            "midway_targets_amount": 0.1,
+            "midway_targets_p": 0.5
+        }
+    }
+}
