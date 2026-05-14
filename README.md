@@ -1,9 +1,21 @@
 # StayStill: a large-scale 3d idle animation dataset
-**Data:** This repository contains the animation data presented in out paper [StayStill: a large-scale 3D idle animation dataset](). StayStill is a dataset that contains around 650.000 frames of idle motion, encompassing general idle motion, idle motion while using a phone and idle actions. A more detailed overview of the data is explained [here](#data) and in the original paper.
+## 🧭 About
+**Data:** This repository contains the animation data presented in out paper [StayStill: a large-scale 3D idle animation dataset](https://arxiv.org/abs/2605.13693). StayStill is a dataset that contains around 650.000 frames of idle motion, encompassing general idle motion, idle motion while using a phone and idle actions. A more detailed overview of the data is explained [here](#data) and in the original paper.
 
 **Model:** It also contains the presented idle animation generator model: on the one hand, it contains the pretrained neural network from Qin et al. ([Paper](https://dl.acm.org/doi/10.1145/3550454.3555454), [GitHub repository](https://github.com/victorqin/motion_inbetweening)). On the other hand, it also contains the technique used to use this motion in-betweening network as an idle animation generator, as explained in the paper.
 
 **Code:** Finally, it contains the evaluation code to reproduce the numerical and user-based comparisons, as well as the necessary responses from the user study to do so.
+
+## 📖 Citing
+If you use the StayStill dataset in any of your projects and scientific research, please cite it as follows:
+```bibtex
+@article{atxa2026staystill,
+  title={StayStill: A Large-Scale 3D Idle Animation Dataset},
+  author={Atxa Landa, Eneko and Rodriguez, Igor and Lazkano, Elena and Kucherenko, Taras},
+  journal={arXiv preprint arXiv:2605.13693},
+  year={2026}
+}
+```
 
 ## 🧍‍♂️Data
 ### Dowloading
@@ -115,7 +127,7 @@ folder_of_your_choice
     └── ...
 ```
 
-- Download the dataset from [Zenodo](https://zenodo.org/records/18741736?preview=1&token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjQwYWNhNjgzLWE4ZDAtNDIzMy05ZjY3LWY3NjE0OTA4NWQ0NSIsImRhdGEiOnt9LCJyYW5kb20iOiIxN2VmODE2YmFkZTczNTk2MzQ4YTJhOTYyMTI2N2Y5NyJ9.DjZnwlSgwhod9XOa3by4kmWHKRkt6r_2L25qB-vfvtOqCk2UtmTkJckArcDc3xYLbEm6GlnXiswI1uMs2gKs3g), and unzip the contents (don't use data cleaning script, use the raw data from Zenodo, or the indexing will not work properly). Then, copy the ``lafan`` folder from the dataset in the ``datasets`` folder in the motion_inbetweening ``(MIB)`` repository.
+- Download the dataset from [Zenodo](https://zenodo.org/records/18741736), and unzip the contents (don't use data cleaning script, use the raw data from Zenodo, or the indexing will not work properly). Then, copy the ``lafan`` folder from the dataset in the ``datasets`` folder in the motion_inbetweening ``(MIB)`` repository.
 
 - Download the pretrained models from the [releases](https://github.com/Enekoassets/StayStill/releases/tag/Model) section of this repository.
   
@@ -224,12 +236,6 @@ cd StayStill/scripts
 - Then, to reproduce the results from the paper, just run the ``subjectiveEvaluation.py`` script in the ``scripts`` folder. This will read the results from the user study from the xlsx file, and will output the Elo ranking, the win rates, and will perform the bootstrap process described in the paper.
 ```
 python3 subjectiveEvaluation.py
-```
-
-## 📖 Citing
-If you use the StayStill dataset in any of your projects and scientific research, please cite it as follows:
-```bibtex
-TODO: put the citing code
 ```
 
 ## 📋 License
