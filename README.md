@@ -19,7 +19,7 @@ If you use the StayStill dataset in any of your projects and scientific research
 
 ## 🧍‍♂️Data
 ### Dowloading
-The dataset contains BVH files for all the animations. If you just need the data, you can download it from [Zenodo](https://zenodo.org/records/18741736?preview=1&token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjQwYWNhNjgzLWE4ZDAtNDIzMy05ZjY3LWY3NjE0OTA4NWQ0NSIsImRhdGEiOnt9LCJyYW5kb20iOiIxN2VmODE2YmFkZTczNTk2MzQ4YTJhOTYyMTI2N2Y5NyJ9.DjZnwlSgwhod9XOa3by4kmWHKRkt6r_2L25qB-vfvtOqCk2UtmTkJckArcDc3xYLbEm6GlnXiswI1uMs2gKs3g).
+The dataset contains BVH files for all the animations. If you just need the data, you can download it from [Zenodo](https://zenodo.org/records/18741736).
 
 ### Train, validation and test splits
 The official train, validation and test splits, as determined in our paper, are the following:
