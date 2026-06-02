@@ -8,6 +8,54 @@ import warnings
 import os
 import matplotlib.pyplot as plt
 
+def pairwise_result_matrices(df, normalize=False):
+    """
+    Creates three pairwise matrices:
+    weak, strong, and tie
+    with fixed model ordering.
+    """
+
+    ORDER = ["gt", "nn", "easing", "slerp", "noise"]
+
+    # Keep only systems that exist in data (but preserve order)
+    systems = [s for s in ORDER if s in set(df["left"]).union(set(df["right"]))]
+
+    weak_matrix = pd.DataFrame(0, index=systems, columns=systems)
+    strong_matrix = pd.DataFrame(0, index=systems, columns=systems)
+    tie_matrix = pd.DataFrame(0, index=systems, columns=systems)
+
+    for _, row in df.iterrows():
+        left = row["left"]
+        right = row["right"]
+        choice = row["choice"]
+
+        # skip unknown labels safely
+        if left not in systems or right not in systems:
+            continue
+
+        if choice == -1:
+            weak_matrix.loc[left, right] += 1
+
+        elif choice == -2:
+            strong_matrix.loc[left, right] += 1
+
+        elif choice == 1:
+            weak_matrix.loc[right, left] += 1
+
+        elif choice == 2:
+            strong_matrix.loc[right, left] += 1
+
+        elif choice == 0:
+            tie_matrix.loc[left, right] += 1
+            tie_matrix.loc[right, left] += 1
+
+    if normalize:
+        weak_matrix = weak_matrix.div(weak_matrix.sum(axis=1), axis=0).fillna(0)
+        strong_matrix = strong_matrix.div(strong_matrix.sum(axis=1), axis=0).fillna(0)
+        tie_matrix = tie_matrix.div(tie_matrix.sum(axis=1), axis=0).fillna(0)
+
+    return weak_matrix, strong_matrix, tie_matrix
+
 def compute_mle_elo(df, SCALE = 400, BASE = 10, INIT_RATING = 1000):
     # Weak win
     ptbl_a_win_weak = pd.pivot_table(
@@ -342,6 +390,20 @@ print(counts)
 
 print(f"number of people used in the anaylsis: {len(df_filtered['userID'].unique())}")
 print(f"number of results used in the anaylsis: {len(df_filtered)}")
+# ==========================================
+# PAIRWISE RESULT MATRICES
+# ==========================================
+
+weak_matrix, strong_matrix, tie_matrix = pairwise_result_matrices(df_filtered)
+
+print("\nWEAK WIN MATRIX:\n")
+print(weak_matrix)
+
+print("\nSTRONG WIN MATRIX:\n")
+print(strong_matrix)
+
+print("\nTIE MATRIX:\n")
+print(tie_matrix)
 
 elo_ranking = compute_mle_elo(df_filtered)
 print("\ELO RANKING:\n")

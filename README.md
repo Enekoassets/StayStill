@@ -29,6 +29,7 @@ The official train, validation and test splits, as determined in our paper, are 
 | Validation | 8 19 21 38 40 |
 | Test | 2 6 9 10 15 22 23 28 43 45 |
 ### Cleaning the data
+#### Manual cleaning
 To easily clean the data, [bvhTools](https://github.com/Enekoassets/bvhTools) must be installed.
 ```
 pip install bvhTools
@@ -42,6 +43,18 @@ python3 cleanData.py
 ```
 
 This script will remove the parts from the long idle animations, and it will create smaller pieces from the original animation with the correct parts of the long sequence. For example, ``idle_00`` might be split into ``idle_00_1``, ``idle_00_2`` and ``idle_00_3`` after removing 2 incorrect parts. The cleaned data will be put inside new folders: ``freemocap_clean/idle`` and ``lafan_clean/idle``.
+
+#### Automatic cleaning
+To clean the data in an automatic manner, the `autoCleanData.py` script can be used. It also needs `bvhTools` to be installed and the dataset located in the `dataset` folder. This script measures the joint speeds in the dataset. Then, it detects speeds 5 standard deviations away from the mean. It expands the detections 10 frames to each side and removes those parts. Finally, it also discards sections that are smaller than the `min_len` variable.
+
+To use the script, set the following variables inside the script and then run it:
+```python
+dataset_folder = "./dataset/idle" # Change the folder path if you want to clean other subsets of the data
+output_folder = "./dataset/idle_auto_clean"
+
+threshold = 5  # Z-score threshold (instances that are 5 std away from the mean are detected as outliers. Change this number for a more relaxed/strict removal.)
+min_len = 60 # sections that are smaller than this number will also be discarded from the final clean dataset
+```
 
 ### Detail
 The data is divided into 2 folders:
