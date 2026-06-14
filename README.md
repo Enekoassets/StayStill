@@ -1,4 +1,7 @@
 # StayStill: a large-scale 3d idle animation dataset
+
+
+
 ## 🧭 About
 **Data:** This repository contains the animation data presented in out paper [StayStill: a large-scale 3D idle animation dataset](https://arxiv.org/abs/2605.13693). StayStill is a dataset that contains around 650.000 frames of idle motion, encompassing general idle motion, idle motion while using a phone and idle actions. A more detailed overview of the data is explained [here](#data) and in the original paper.
 
