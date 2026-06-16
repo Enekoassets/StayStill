@@ -92,10 +92,6 @@ The following table presents the data in a more specific manner:
 | **General Idle** | idle | **181.846** | **1:41:01** | **50** |
 | **Idle with a phone** | phone | **187.741** | **1:44:18** | **50** |
 
-The following video shows some examples of the motion clips in the dataset:
-
-TODO: put the video
-
 ## 🧍‍♀️ Idle animation generator model
 The repository also contains the idle generator model described in the paper. The generator has been used to compare a deep learning baseline with other naive baselines, so it generates motion taking a ground truth (GT) motion clip as base motion. It samples the GT every 45 frames, and interpolates between those frames using the in-betweening neural network by Qin et al.
 
