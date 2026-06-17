@@ -1,4 +1,7 @@
 # StayStill: a large-scale 3d idle animation dataset
+
+<img width="2354" height="858" alt="showcase" src="https://github.com/user-attachments/assets/ec1a2986-509c-4c3c-8368-666dd195c766" />
+
 ## 🧭 About
 **Data:** This repository contains the animation data presented in out paper [StayStill: a large-scale 3D idle animation dataset](https://arxiv.org/abs/2605.13693). StayStill is a dataset that contains around 650.000 frames of idle motion, encompassing general idle motion, idle motion while using a phone and idle actions. A more detailed overview of the data is explained [here](#data) and in the original paper.
 
@@ -18,8 +21,11 @@ If you use the StayStill dataset in any of your projects and scientific research
 ```
 
 ## 🧍‍♂️Data
+
+https://github.com/user-attachments/assets/77879a49-c70e-42c1-a4e6-d339069f3bbb
+
 ### Dowloading
-The dataset contains BVH files for all the animations. If you just need the data, you can download it from [Zenodo](https://zenodo.org/records/18741736?preview=1&token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjQwYWNhNjgzLWE4ZDAtNDIzMy05ZjY3LWY3NjE0OTA4NWQ0NSIsImRhdGEiOnt9LCJyYW5kb20iOiIxN2VmODE2YmFkZTczNTk2MzQ4YTJhOTYyMTI2N2Y5NyJ9.DjZnwlSgwhod9XOa3by4kmWHKRkt6r_2L25qB-vfvtOqCk2UtmTkJckArcDc3xYLbEm6GlnXiswI1uMs2gKs3g).
+The dataset contains BVH files for all the animations. If you just need the data, you can download it from [Zenodo](https://zenodo.org/records/18741736).
 
 ### Train, validation and test splits
 The official train, validation and test splits, as determined in our paper, are the following:
@@ -98,10 +104,6 @@ The following table presents the data in a more specific manner:
 | **Idle actions total** | -- | **275.751** | **2:33:11** | **1534** |
 | **General Idle** | idle | **181.846** | **1:41:01** | **50** |
 | **Idle with a phone** | phone | **187.741** | **1:44:18** | **50** |
-
-The following video shows some examples of the motion clips in the dataset:
-
-TODO: put the video
 
 ## 🧍‍♀️ Idle animation generator model
 The repository also contains the idle generator model described in the paper. The generator has been used to compare a deep learning baseline with other naive baselines, so it generates motion taking a ground truth (GT) motion clip as base motion. It samples the GT every 45 frames, and interpolates between those frames using the in-betweening neural network by Qin et al.
