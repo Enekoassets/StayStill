@@ -9,11 +9,11 @@
 ## 📖 Citing
 If you use the StayStill dataset in any of your projects and scientific research, please cite it as follows:
 ```bibtex
-@article{atxa2026staystill,
-  title={StayStill: A Large-Scale 3D Idle Animation Dataset},
-  author={Atxa Landa, Eneko and Rodriguez, Igor and Lazkano, Elena and Kucherenko, Taras},
-  journal={arXiv preprint arXiv:2605.13693},
-  year={2026}
+@article{landa2026staystill,
+  author = {Atxa Landa, Eneko and Rodriguez, Igor and Lazkano, Elena and Kucherenko, Taras},
+  title = {StayStill: a large-scale 3D idle animation dataset},
+  journal = {Computer Graphics Forum},
+  year = {2026}
 }
 ```
 
