@@ -3,12 +3,13 @@
 <img width="2354" height="858" alt="showcase" src="https://github.com/user-attachments/assets/ec1a2986-509c-4c3c-8368-666dd195c766" />
 
 ## 🧭 About
-**Data:** This repository contains the animation data presented in out paper [StayStill: a large-scale 3D idle animation dataset](https://arxiv.org/abs/2605.13693). StayStill is a dataset that contains around 650.000 frames of idle motion, encompassing general idle motion, idle motion while using a phone and idle actions. A more detailed overview of the data is explained [here](#data) and in the original paper.
+**Data:** This repository contains the animation data presented in our paper [StayStill: a large-scale 3D idle animation dataset](https://arxiv.org/abs/2605.13693). StayStill is a dataset that contains around 650.000 frames of idle motion, encompassing general idle motion, idle motion while using a phone and idle actions. A more detailed overview of the data is explained in the **Data** section and in the original paper.
 
 **Model:** It also contains the presented idle animation generator model: on the one hand, it contains the pretrained neural network from Qin et al. ([Paper](https://dl.acm.org/doi/10.1145/3550454.3555454), [GitHub repository](https://github.com/victorqin/motion_inbetweening)). On the other hand, it also contains the technique used to use this motion in-betweening network as an idle animation generator, as explained in the paper.
 
 **Code:** Finally, it contains the evaluation code to reproduce the numerical and user-based comparisons, as well as the necessary responses from the user study to do so.
 
+**Project page:** The project page can be found [here](https://enekoassets.github.io/staystill.html).
 ## 📖 Citing
 If you use the StayStill dataset in any of your projects and scientific research, please cite it as follows:
 ```bibtex
