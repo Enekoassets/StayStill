@@ -4,6 +4,7 @@
 [![Paper preprint](https://img.shields.io/badge/Paper%20preprint-green?style=plastic)](https://arxiv.org/abs/2605.13693)
 [![Dataset](https://img.shields.io/badge/Dataset-yellow?style=plastic)](https://zenodo.org/records/18741736)
 [![Video](https://img.shields.io/badge/Video-red?style=plastic)](https://www.youtube.com/watch?v=lhWebn_zrac)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 <img width="2354" height="858" alt="showcase" src="https://github.com/user-attachments/assets/ec1a2986-509c-4c3c-8368-666dd195c766" />
 
