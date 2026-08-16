@@ -1,9 +1,9 @@
 # StayStill: a large-scale 3d idle animation dataset
 
-![Static Badge](https://img.shields.io/badge/Project%20page-blue?style=plastic&link=https%3A%2F%2Fenekoassets.github.io%2Fstaystill.html)
-![Static Badge](https://img.shields.io/badge/Paper%20preprint-green?style=plastic&link=https%3A%2F%2Farxiv.org%2Fabs%2F2605.13693)
-![Static Badge](https://img.shields.io/badge/Dataset-yellow?style=plastic&link=https%3A%2F%2Fzenodo.org%2Frecords%2F18741736)
-![Static Badge](https://img.shields.io/badge/Video-red?style=plastic&link=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DlhWebn_zrac)
+[![Project page](https://img.shields.io/badge/Project%20page-blue?style=plastic)](https://enekoassets.github.io/staystill.html)
+[![Paper preprint](https://img.shields.io/badge/Paper%20preprint-green?style=plastic)](https://arxiv.org/abs/2605.13693)
+[![Dataset](https://img.shields.io/badge/Dataset-yellow?style=plastic)](https://zenodo.org/records/18741736)
+[![Video](https://img.shields.io/badge/Video-red?style=plastic)](https://www.youtube.com/watch?v=lhWebn_zrac)
 
 <img width="2354" height="858" alt="showcase" src="https://github.com/user-attachments/assets/ec1a2986-509c-4c3c-8368-666dd195c766" />
 
