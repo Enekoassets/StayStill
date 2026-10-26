@@ -1,12 +1,16 @@
+<div align="center">
+  
 # StayStill: a large-scale 3d idle animation dataset
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 [![Project page](https://img.shields.io/badge/Project%20page-blue)](https://enekoassets.github.io/staystill.html)
-[![Paper preprint](https://img.shields.io/badge/Paper%20preprint-green)](https://arxiv.org/abs/2605.13693)
+[![Arxiv preprint](https://img.shields.io/badge/Paper%20preprint-green)](https://arxiv.org/abs/2605.13693)
+[![Paper](https://img.shields.io/badge/Paper-orange)](https://onlinelibrary.wiley.com/doi/10.1111/cgf.70571)
 [![Dataset](https://img.shields.io/badge/Dataset-yellow)](https://zenodo.org/records/18741736)
 [![Video](https://img.shields.io/badge/Video-red)](https://www.youtube.com/watch?v=lhWebn_zrac)
 
 <img width="2354" height="858" alt="showcase" src="https://github.com/user-attachments/assets/ec1a2986-509c-4c3c-8368-666dd195c766" />
+</div>
 
 ## 🧭 About
 **Data:** This repository contains the animation data presented in our paper [StayStill: a large-scale 3D idle animation dataset](https://arxiv.org/abs/2605.13693). StayStill is a dataset that contains around 650.000 frames of idle motion, encompassing general idle motion, idle motion while using a phone and idle actions. A more detailed overview of the data is explained in the **Data** section and in the original paper.
@@ -44,13 +48,13 @@ The official train, validation and test splits, as determined in our paper, are 
 ### Cleaning the data
 #### Manual cleaning
 To easily clean the data, [bvhTools](https://github.com/Enekoassets/bvhTools) must be installed.
-```
+```bash
 pip install bvhTools
 ```
 
 Unzip the downloaded dataset, and locate it in the ``dataset`` folder. The idle animations part of the dataset contains shaky and incorrect motion due to bad detection of the motion capture system. These incorrect parts can be removed by running the ``cleanData.py`` script in the scripts folder.
 
-```
+```bash
 cd StayStill/scripts
 python3 cleanData.py
 ```
@@ -117,25 +121,25 @@ The repository also contains the idle generator model described in the paper. Th
 
 ### Prerequisites
 - Install necessary packages (use your virtual environment of choice):
-```
+```bash
 pip install scipy argparse torch
 ```
   
 - Install [Blender 4](https://www.blender.org/). *Note: Blender 5 won't directly work. The next snap installation should work out of the box:*
-```
+```bash
 sudo snap install blender --channel=4.5lts/stable --classic
 ```
    
 - Clone this repository into a folder of your choice.
-```
+```bash
 git clone https://github.com/Enekoassets/StayStill.git
 ```
 - Clone the motion [in-betweening via two stage transformers repository](https://github.com/victorqin/motion_inbetweening) from Qin et al. **to the same folder (important)**.
-```
+```bash
 git clone https://github.com/victorqin/motion_inbetweening.git
 ```
 Your folder structure should look like this:
-```
+```yaml
 folder_of_your_choice
 ├── StayStill
 │   ├── configs
@@ -156,33 +160,33 @@ folder_of_your_choice
 - Unzip the ``models.zip`` file and paste the ``idle_ctx_model`` and ``idle_det_model`` folders into the ``experiments`` folder in the ``MIB`` repository.
 
 - Run the ``setup.py`` script in the scripts folder. It will copy the necessary files from the staystill repository to the ``MIB`` repository.
-```
+```bash
 cd StayStill/scripts
 python3 setup.py
 ```
 
 ### Running the generator
 First locate yourself in the ``motion_inbetweening/scripts`` folder.
-```
+```bash
 cd motion_inbetweening/scripts
 ```
 Run the ``generatorLogic.py`` script to generate all the transitions. This script will create a folder called json, and it will save the motion there, in JSON format. You have to pass the **index** of the ground truth that will be used to generate the new motion from.
 
 You can also pass ``--generateSlerp`` and ``--generateEasing`` as additional arguments, to also generate motion using these baselines.
 
-```python
+```bash
 python3 generatorLogic.py -i 7
 ```
 
 After this, the output has to be converted into the bvh format. Run the ``json2bvhMotion.py`` script. It will read every json in the json folder and it will write the corresponding BVH files in a newly created ``bvh`` folder.
 
-```python
+```bash
 python3 json2bvhMotion.py
 ```
 
 Finally, run the ``blenderPostProcess.py`` to apply the post-processing described in the paper. This will read all the BVH files in the ``bvh`` folder and it will prepare the final post processed animations. This postprocessed animations will be written into the same ``bvh`` folder, with the subscript ``_pp``.
 
-```python
+```bash
 python3 blenderPostProcess.py
 ```
 
@@ -213,13 +217,13 @@ In the numerical evaluation, you can compare the pretrained neural network, or t
 *Note: The [prerequisites](#prerequisites) have to be filled in order to use this.*
 
 - First locate yourself in the ``motion_inbetweening/scripts`` folder.
-```
+```bash
 cd motion_inbetweening/scripts
 ```
 
 - You can use the following command to run the script with the flag -t 99 (this will trigger all transition sizes 5, 15, 30, 45):
 
-```python
+```bash
 python3 eval_detail_model_mod.py idle_det_model idle_ctx_model -t 99
 ```
 
@@ -231,12 +235,12 @@ To calculate the baseline results, the process is exactly the same as with the m
 *Note: The [prerequisites](#prerequisites) have to be filled in order to use this.*
 
 - First locate yourself in the ``motion_inbetweening/scripts`` folder.
-```
+```bash
 cd motion_inbetweening/scripts
 ```
 
 - Run the script
-```python
+```bash
 python3 run_baseline_benchmark_mod.py idle_ctx_model
 ```
 
@@ -251,12 +255,12 @@ pip install pandas numpy scikit-learn tqdm matplotlib openpyxl
 ```
 
 - First locate yourself in the ``StayStill/scripts`` folder.
-```
+```bash
 cd StayStill/scripts
 ```
 
 - Then, to reproduce the results from the paper, just run the ``subjectiveEvaluation.py`` script in the ``scripts`` folder. This will read the results from the user study from the xlsx file, and will output the Elo ranking, the win rates, and will perform the bootstrap process described in the paper.
-```
+```bash
 python3 subjectiveEvaluation.py
 ```
 
